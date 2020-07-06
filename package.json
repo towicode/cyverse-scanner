@@ -2,7 +2,7 @@
   "name": "cyverse-scanner",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "http://towicode.github.io/cyverse-scanner",
+  "homepage" : "http://towicode.github.io/cyverse-scanner/build",
   "dependencies": {
     "quagga": "^0.12.1",
     "react": "^16.3.1",
