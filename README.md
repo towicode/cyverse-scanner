@@ -1,5 +1,5 @@
 
-# Quagga - Create React App
+# Quagga - CyVerse Scanner
 
 This is an example of a Create React App implementation of QuaggaJS's live barcode scanner, based on
 
