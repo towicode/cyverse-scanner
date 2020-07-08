@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Scanner from './Scanner';
 import Result from './Result';
+import uaimg from './image/ua.png'
 
 class App extends Component {
 
@@ -36,7 +37,7 @@ class App extends Component {
           <div className='helpText' style={{ background: "white" }}>
             {this.state.results.length > 0 ? null  : <span>Scan tube and press accept after verifying barcode.</span>}
             <div>
-              <img style={{ marginTop: "10px", width: "50vw" }} src="https://cyverse.org/sites/default/files/cyverse_logo.png" />
+              <img style={{ marginTop: "10px", width: "50vw" }} alt="UA Logo" src={uaimg} />
             </div>
             {this.state.results.length <= 0 ? null : <img src={this.state.results[0].data2}/>}
 
