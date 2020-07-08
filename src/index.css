@@ -9,20 +9,83 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
 }
 
-.header {
+.interactive {
+  position: absolute;
+}
+
+
+.barcoderesults {
+  margin-top: 20px;
+  padding: 5px;
+  border: 2px solid black;
+  margin-bottom: 10px;
+}
+
+.scan {
 
   z-index: 15;
   height: 64px;
   width: 64px;
   position: absolute;
   left: 50%;
-  margin-left: -32px;
+  margin-left: -96px;
   top: 80%;
   margin-top: 0px;
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/42/Photo-camera-in-circular-outlined-interface-button.svg");
+  border: 1px solid black;
+  background-image: url("./image/001-scan.png");
   background-color: white;
+}
+
+.switch {
+
+  z-index: 15;
+  height: 64px;
+  width: 64px;
+  position: absolute;
+  left: 50%;
+  margin-left: -96px;
+  top: 80%;
+  margin-top: 0px;
+  border: 1px solid black;
+  background-image: url("./image/swap.png");
+  background-color: white;
+}
+
+.cancel {
+  z-index: 15;
+  height: 64px;
+  width: 64px;
+  position: absolute;
+  left: 50%;
+  margin-left: 32px;
+  top: 80%;
+  margin-top: 0px;
+  border: 1px solid black;
+  background-image: url("./image/002-clear.png");
+  background-color: white;
+}
+
+.accept {
+  z-index: 15;
+  height: 64px;
+  width: 64px;
+  position: absolute;
+  left: 50%;
+  margin-left: 32px;
+  top: 80%;
+  margin-top: 0px;
+  border: 1px solid black;
+  background-image: url("./image/003-accept.png");
+  background-color: red;
+}
+
+.helpText {
+  font-size: xx-large;
+  text-align: center;
+  margin-top: 20px
 }
 
 canvas {

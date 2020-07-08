@@ -14,7 +14,12 @@ class App extends Component {
     this.setState({ scanning: !this.state.scanning, status: this.state.scanning ? 'waiting' : 'scanning', result: [] });
   }
 
+  _switch = () => {
+    
+  }
+
   _onDetected = (result) => {
+    console.log(result);
     this.setState({
       results: [result],
       scanning: false,
@@ -26,18 +31,42 @@ class App extends Component {
     console.log('Results: ', this.state.results)
     return (
       <div>
-        <div className='status'>
-          <div style={{ background: "white" }}>
-            Status: {this.state.status}
+
+        {this.state.scanning ? null : <div className='status'>
+          <div className='helpText' style={{ background: "white" }}>
+            {this.state.results.length > 0 ? null  : <span>Scan tube and press accept after verifying barcode.</span>}
+            <div>
+              <img style={{ marginTop: "10px", width: "50vw" }} src="https://cyverse.org/sites/default/files/cyverse_logo.png" />
+            </div>
+            {this.state.results.length <= 0 ? null : <img src={this.state.results[0].data2}/>}
+
+
+            {this.state.results.length <= 0 ? null : <div>
+              <div className="barcoderesults">Barcode: {this.state.results[0].codeResult.code}</div>
+              <div className="otherdata">Name: {this.state.results[0].codeResult.code}</div>
+              <div className="otherdata">NetID: {this.state.results[0].codeResult.code}</div>
+              <div className="otherdata">Date: {this.state.results[0].codeResult.code}</div>
+
+              
+              
+              </div>}
+
+
+
+
           </div>
         </div>
-        <div className="header" onClick={this._scan}>
-        {/* {this.state.scanning ? 'Stop' : 'Start'} */}
-        </div>
-        <ul className="results">
-          {this.state.results.map((result, i) => (<Result key={result.codeResult.code + i} result={result} />))}
-        </ul>
-        { this.state.scanning ? <Scanner onDetected={this._onDetected} /> : null }
+        }
+
+        {this.state.scanning ? null :
+          <div>
+            <div className="scan" onClick={this._scan}>
+            </div>
+
+            <div className="accept" style={this.state.results.length > 0 ? {backgroundColor: "green"} : {backgroundColor: "red"}} onClick={console.log("accepted!")}>
+            </div>
+          </div>}
+        {this.state.scanning ? <Scanner cancel={this._scan} onDetected={this._onDetected} /> : null}
       </div >
     )
   }
