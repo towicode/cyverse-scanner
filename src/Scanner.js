@@ -116,13 +116,11 @@ class Scanner extends Component {
   _switch = () => {
 
     if (this.mode === "environment") {
-      console.log("AAA");
       Quagga.stop();
       this._startQuaggaHelper("user");
       this.mode = "user";
     }
     else if (this.mode === "user") {
-      console.log("BBB");
       Quagga.stop();
       this._startQuaggaHelper("environment");
       this.mode = "environment"
